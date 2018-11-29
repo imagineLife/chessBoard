@@ -2,6 +2,8 @@ import React from 'react';
 import Knight from '../Knight'
 import Square from '../Square'
 import {moveKnight, canGoHere} from '../../utils/gameStuff'
+import {DragDropContextProvider} from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend';
 // import renderSquare from '../../utils/renderSquare'
 
 export default class Board extends React.Component{
@@ -56,9 +58,11 @@ export default class Board extends React.Component{
 		}
 
 		return (
-			<div style={divStyle}>
-				{squares}
-			</div>
+			<DragDropContextProvider backend={HTML5Backend}>
+				<div style={divStyle}>
+					{squares}
+				</div>
+			</DragDropContextProvider>
 		)
 
 	}
