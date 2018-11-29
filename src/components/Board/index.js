@@ -1,6 +1,7 @@
 import React from 'react';
 import Knight from '../Knight'
 import Square from '../Square'
+import {moveKnight} from '../../utils/gameStuff'
 // import renderSquare from '../../utils/renderSquare'
 
 export default class Board extends React.Component{
@@ -8,6 +9,7 @@ export default class Board extends React.Component{
 		super(props)
 
 		this.renderSquare = this.renderSquare.bind(this)
+		this.handleSquareClick = this.handleSquareClick.bind(this)
 	}
 
 	renderSquare(i, [knightX, knightY]){
@@ -19,7 +21,10 @@ export default class Board extends React.Component{
 
 		return (
 
-			<div key={i} style={{width: '12.5%', height: '12.5%'}}>
+			<div 
+				key={i} 
+				style={{width: '12.5%', height: '12.5%'}}
+				onClick={() => this.handleSquareClick(x,y)}>
 				<Square black={isBlack}>
 					{piece}
 				</Square>
@@ -29,6 +34,10 @@ export default class Board extends React.Component{
 
 	}
 	
+	handleSquareClick(toX, toY){
+		moveKnight(toX, toY)
+	}
+
 	render(){
 
 		const squares = [];
