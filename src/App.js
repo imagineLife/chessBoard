@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import './resetNormalize.css';
 import './main.css';
 import Board from './components/Board'
-import observe from './utils/observe'
+import {observe} from './utils/gameStuff'
 
 // const App = () => {
 //   return (

@@ -44,9 +44,6 @@ export default class Board extends React.Component{
 			flexWrap: 'wrap'
 		}
 
-		console.log('squares')
-		console.log(squares)
-
 		return (
 			<div style={divStyle}>
 				{squares}
