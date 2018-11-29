@@ -1,3 +1,5 @@
 body{
 	line-height: 2;
+	display: grid;
+	height: 100vh;
 }

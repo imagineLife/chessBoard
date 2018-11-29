@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function Square({black, children}){
+	console.log('square black props')
+	console.log(black)
 	const fillColor = black ? 'black' : 'white';
 	const strokeColor = black ? 'white' : 'black';
 	const sqStyle = {
