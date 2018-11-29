@@ -1,4 +1,4 @@
-let knightPosition = [0,0];
+let knightPosition = [1,7];
 let observer = null;
 
 function emitChange(){
@@ -17,4 +17,13 @@ export function observe(o){
 export function moveKnight(toX, toY){
 	knightPosition = [toX, toY]
 	emitChange();
+}
+
+export function canGoHere(xPos, yPos){
+	const [x, y] = knightPosition;
+	const dx = xPos - x;
+	const dy = yPos - y;
+
+	return (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
+			(Math.abs(dx) === 1 && Math.abs(dy) === 2) ;
 }

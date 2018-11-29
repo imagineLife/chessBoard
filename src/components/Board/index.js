@@ -1,7 +1,7 @@
 import React from 'react';
 import Knight from '../Knight'
 import Square from '../Square'
-import {moveKnight} from '../../utils/gameStuff'
+import {moveKnight, canGoHere} from '../../utils/gameStuff'
 // import renderSquare from '../../utils/renderSquare'
 
 export default class Board extends React.Component{
@@ -35,7 +35,9 @@ export default class Board extends React.Component{
 	}
 	
 	handleSquareClick(toX, toY){
-		moveKnight(toX, toY)
+		if(canGoHere(toX, toY)){
+			moveKnight(toX, toY)
+		}
 	}
 
 	render(){
